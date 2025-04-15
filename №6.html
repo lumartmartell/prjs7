@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>№6</title>
+   </head>
+   <body>
+      <div class="box" id="movableBox"></div>
+
+      <script>
+        const box = document.getElementById('movableBox');
+        let posX = 100;
+        let posY = 100;
+        
+        document.addEventListener('keydown', function(event) {
+          const key = event.key.toLowerCase();
+          
+          switch(key) {
+            case 'w':
+              posY -= 1;
+              box.style.top = posY + 'px';
+              break;
+            case 'a':
+              posX -= 1;
+              box.style.left = posX + 'px';
+              break;
+            case 's':
+              posY += 1;
+              box.style.top = posY + 'px';
+              break;
+            case 'd':
+              posX += 1;
+              box.style.left = posX + 'px';
+              break;
+          }
+        });
+     </script>
+   </body>
+</html>
+
+<style>
+  * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      outline: none;
+      transition: all .5s;
+      font-family: sans-serif;
+  }
+  
+  .box {
+      width: 100px;
+      height: 100px;
+      background-color: #000000;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      transition: all 0.1s ease;
+  }
+</style>

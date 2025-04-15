@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>№1</title>
+   </head>
+   <body>
+      <button id="hideButton">Кнопка</button>
+
+      <script>
+         document.getElementById('hideButton').addEventListener('click', function() {
+            this.style.display = 'none';
+         });
+      </script>
+   </body>
+</html>
+
+<style>
+   * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      outline: none;
+      transition: all .5s;
+   }
+
+   body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+   }
+
+   button {
+      border: 1px solid transparent;
+      padding: 16px 48px;
+      font-size: 20px;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+   }
+
+   button:hover {
+      border: 1px solid transparent;
+      padding: 16px 48px;
+      font-size: 20px;
+      background-color: rgb(252, 27, 222);
+      color: white;
+      cursor: pointer;
+   }
+</style>

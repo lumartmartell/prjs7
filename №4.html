@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>№4</title>
+   </head>
+   <body>
+      <button id="clickButton">Нажмите</button>
+      <button id="mouseoverButton">Наведите</button>
+      <button id="mouseoutButton">Наведите</button>
+      <button id="dblclickButton">Щелкните</button>
+      <button id="mousedownButton">Нажмите</button>
+   </body>
+   <script>
+      document.body.style.backgroundColor = 'green';
+      
+      document.getElementById('clickButton').addEventListener('click', function() {
+         this.style.transform = 'scale(1.1)';
+         setTimeout(() => {
+            this.style.transform = 'scale(1)';
+         }, 300);
+      });
+
+      document.getElementById('mouseoverButton').addEventListener('mouseover', function() {
+         this.style.boxShadow = '0 0 15px rgb(58, 55, 251)';
+      });
+      document.getElementById('mouseoverButton').addEventListener('mouseout', function() {
+         this.style.boxShadow = 'none';
+      });
+
+      document.getElementById('mouseoutButton').addEventListener('mouseover', function() {
+         this.style.transform = 'scale(1.1) rotate(5deg)';
+         this.style.backgroundColor = '#ff3b3b';
+         this.style.boxShadow = '0 0 20px rgba(255, 59, 59, 0.5)';
+      });
+      document.getElementById('mouseoutButton').addEventListener('mouseout', function() {
+         this.style.transform = 'scale(1) rotate(0deg)';
+         this.style.backgroundColor = '#e02ef0';
+         this.style.boxShadow = 'none';
+      });
+
+      document.getElementById('dblclickButton').addEventListener('dblclick', function() {
+         this.style.borderRadius = '100px';
+         setTimeout(() => {
+            this.style.borderRadius = '5px';
+         }, 500);
+      });
+
+      document.getElementById('mousedownButton').addEventListener('mousedown', function() {
+         this.style.letterSpacing = '4px';
+      });
+      document.getElementById('mousedownButton').addEventListener('mouseup', function() {
+         this.style.letterSpacing = 'normal';
+      });
+   </script>
+</html>
+
+<style>
+   * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      outline: none;
+      transition: all .5s;
+      font-family: sans-serif;
+   }
+
+   body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 32px;
+      flex-direction: column;
+      background-image: url('hq720.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+   }
+   
+   button {
+      padding: 16px 48px;
+      border-radius: 5px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.5s;
+      width: 240px;
+   }
+
+   #clickButton {
+      background-color: #523bff;
+      color: white;
+      border: none;
+   }
+   
+   #mouseoverButton {
+      background-color: #000000;
+      color: white;
+      border: none;
+   }
+   
+   #mouseoutButton {
+      background-color: #e02ef0;
+      color: white;
+      border: none;
+   }
+   
+   #dblclickButton {
+      background-color: #ffffff;
+      color: black;
+   }
+   
+   #mousedownButton {
+      background-color: #2cec17;
+      color: white;
+      border: none;
+   }
+</style>
